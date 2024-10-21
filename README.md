@@ -79,6 +79,12 @@ mandatory
 
 In this project, we will use the `yarn` package manager instead of npm.
 
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update
+sudo apt install --no-install-recommends yarn
+yarn --version
+
 *   Using `yarn create` create your React app.
 *   Remove all the unnecessary files and their respective imports. `src/App.test.js`,`src/reportWebVitals.js`, `src/setupTests.js`, `src/logo.svg`
 *   Make sure your App component returns an empty `div` with `className="App"`
