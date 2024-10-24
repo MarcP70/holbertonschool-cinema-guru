@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './general.css';
 
-const SearchBar = ({ title, setTitle }) => {
+function SearchBar ({ title, setTitle }) {
   // Handle input change
   const handleInput = (event) => {
     setTitle(event.target.value);

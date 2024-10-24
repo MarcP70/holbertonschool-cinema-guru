@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
-import Dashboard from './components/Dashboard';
-import Authentication from './components/Authentication';
+import Authentication from './routes/auth/Authentication';
+import Dashboard from './routes/auth/Dashboard';
 
 function App() {
   // State to manage authentication
@@ -15,7 +15,7 @@ function App() {
 
     // If accessToken exists, make the API call
     if (accessToken) {
-      axios.post('/api/auth/', {}, {
+      axios.post('http://localhost:8000/api/auth/', {}, {
         headers: {
           Authorization: `Bearer ${accessToken}`
         }
@@ -36,7 +36,10 @@ function App() {
       {isLoggedIn ? (
         <Dashboard username={username} /> // Pass username to Dashboard
       ) : (
-        <Authentication />
+        <Authentication
+          setIsLoggedIn={setIsLoggedIn}  // Pass setIsLoggedIn as prop
+          setUserUsername={setUsername}  // Pass setUserUsername as prop (setUsername)
+        />
       )}
     </div>
   );
