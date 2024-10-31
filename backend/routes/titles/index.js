@@ -10,7 +10,7 @@ router.use('/', userTitlesRouter)
 
 router.get('/advancedsearch', verifyToken, async (req, res) => {
     const maxYear = parseInt(req.query.maxYear)
-    const minYear = parseInt(req.query.maxYear)
+    const minYear = parseInt(req.query.minYear)
     const genre = req.query.genres ? req.query.genres.split(',').map(genre => genre.charAt(0).toUpperCase() + genre.slice(1)) : []
     const params = {
         maxYear: isNaN(maxYear) ? 2022 : maxYear,
@@ -33,7 +33,7 @@ router.get('/advancedsearch', verifyToken, async (req, res) => {
             }
         },
         order: [getSort(params.sort)],
-        limit: params.page * 50,
+        limit: params.page * 10,
     }).catch(err => res.status(500).send(err))
     res.send({ totalCount: titles.length, titles })
 })
