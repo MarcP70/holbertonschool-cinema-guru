@@ -55,8 +55,16 @@ function Authentication({ setIsLoggedIn = () => {}, setUserUsername = () => {} }
   return (
     <div className="authentication-container">
       <div className="button-group">
-        <button onClick={handleSignInClick}>Sign In</button>
-        <button onClick={handleSignUpClick}>Sign Up</button>
+        <button
+          onClick={handleSignInClick}
+          className={_switch ? 'btn-active' : 'btn-inactive'}
+        >Sign In
+        </button>
+        <button
+          onClick={handleSignUpClick}
+          className={!_switch ? 'btn-active' : 'btn-inactive'}
+        >Sign Up
+        </button>
       </div>
 
       <form onSubmit={handleSubmit}>

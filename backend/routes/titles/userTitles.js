@@ -6,6 +6,7 @@ const UserActivity = require('../../models/UserActivity')
 const { verifyToken } = require('../../utils/tokens')
 
 router.get('/favorite/', verifyToken, (req, res) => {
+    console.log("ICI");
     User.findOne({ where: { id: req.userId }, include: { model: Title, as: "favorite" } }).then(user => {
         res.send(user.favorite)
     }).catch(err => res.status(500).send(err))
