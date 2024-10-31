@@ -1,0 +1,12 @@
+.username, .title {
+  color: #BB000E; /* Style for username */
+  size: 12px;
+}
+
+.added,
+.action-text1,
+.action-text2,
+.separator,
+.date {
+  color: #FFFFFF; /* Style for the remaining text */
+}

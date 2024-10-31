@@ -1,0 +1,47 @@
+.dashboard {
+  display: grid;
+  grid-template-rows: auto 1fr; /* L'en-tête occupe la première ligne, le reste est le contenu */
+  grid-template-columns: auto 1fr; /* La sidebar occupe la première colonne, le contenu principal la seconde */
+  height: 100vh; /* Prend toute la hauteur de la fenêtre */
+}
+
+.header {
+  grid-column: 1 / -1; /* S'étend sur toutes les colonnes */
+  /* width: 100%; */
+}
+
+.sidebar {
+  grid-row: 2; /* Occupe la deuxième rangée */
+}
+
+.main-content {
+  grid-row: 2; /* Occupe la deuxième rangée */
+  overflow-y: auto;
+}
+
+.movie-list {
+  list-style-type: none;
+  display: flex; /* Utilise Flexbox pour la mise en page */
+  flex-wrap: wrap; /* Permet aux cartes de passer à la ligne si l'espace est insuffisant */
+  justify-content: flex-start; /* Aligne les cartes sur le côté gauche */
+  padding: 0; /* Retire le rembourrage par défaut */
+  margin: 0; /* Retire la marge par défaut */
+}
+
+.movie-list li {
+  flex: 0 1 200px; /* Taille de base des cartes (200px) */
+  margin: 10px; /* Espace entre les cartes */
+}
+
+.dashboard {
+  background-color: #222222;
+  height: 100%;
+}
+
+.favorites-title {
+  font-size: 63px;
+  color: #FFFFFF;
+  text-decoration: underline red;
+  text-underline-offset: 20px;
+  text-align: center;
+}
